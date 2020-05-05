@@ -3,6 +3,7 @@ import time
 import subprocess
 from termcolor import colored
 import argparse
+import os
 
 parser = argparse.ArgumentParser(description = "Scheduler for nmap Scanning")
 parser.add_argument("-t", "--targets", help="List of Targets")
@@ -15,7 +16,7 @@ sched = args.schedule
 
 if not os.geteuid() == 0:
     sys.exit("[!] Must Be Run As Root!")
-    
+
 print("-" * 20)
 print(colored("[*] Starting nmap Scanning", "red", attrs=["bold"]))
 print("-" * 20)
