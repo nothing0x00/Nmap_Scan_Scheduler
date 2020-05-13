@@ -10,7 +10,10 @@ While the scan is running the script will output the results to the screen, as w
 
 The options for the script can be seen below:
 
-```Scheduler for nmap Scanning
+```usage: scan_sched.py [-h] [-t TARGETS] [-o OUTPUT] [-s SCHEDULE] [--tcp]
+                     [--tcpall] [--udp] [--udpall]
+
+Scheduler for nmap Scanning
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -21,6 +24,11 @@ optional arguments:
   -s SCHEDULE, --schedule SCHEDULE
                         Time to Run Scan (Based on System Clock) Formatted As
                         hour:minute
+  --tcp                 Basic TCP Scan of Common Ports
+  --tcpall              Full TCP Port Scan with Discovery NSE Scripts
+  --udp                 Basic UDP Scan
+  --udpall              Full UDP Port Scan
+
 ```
 
 ### Installation and Use
@@ -32,6 +40,6 @@ To install the dependencies run the following:
 
 After installing dependencies run the script with the following command:
 
-`sudo python3 scan_sched.py -t [targets list] -o [output file names] -s [time to run scan]`
+`sudo python3 scan_sched.py -t [targets list] -o [output file names] -s [time to run scan] [scan type]`
 
 It is important to note that the time to run the scan is set based on the system clock for the machine running the script, with the time identified on a 24 hour time clock, rather than a 12 hour clock; eg 16:00 not 04:00 for 4PM.
